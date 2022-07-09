@@ -1,4 +1,4 @@
-# Grading Script
+# Overview
 This project began back in February when I was learning Pandas for the first time. There were two particular parts of grade administration that were very tedious, and I thought that a good way to improve my use of pandas would be to use list comprehensions to automatically delete Gradescope's massive number of bloat columns and use a right merge to combine all of my student grading data into one spreadsheet with only the students who were still enrolled in the class. Once that was done, I still did everything else in Excell as I normally would. 
 
 As I got better at using pandas, matplotlib and seaborn, I was curious about how to make use visualizations to see student progress in their exams and other aspects of the course. As I made progress in the data science bootcamp, I wanted to use even more of the things I was learning to both understand student performance and also front-load the grade administration process. 

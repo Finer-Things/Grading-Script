@@ -9,7 +9,7 @@ The file Grading Script 34A Spring 2022 is the restul of this process, and almos
 Script for compiling multiple csv files with grade data and an updated registrar list in them. The files are merged into a single data frame, the columns are cleaned and sorted, and grades are computed. A detailed spreadsheet is saved as a CSV file, and leaner version is saved as a CSV file to be uploaded to the registrar. 
 
 ## gradingfunctions.py
-This is a file meant to store all of the functions used in the grading script. The original version had just spaghetti code and friends of mine had no desire to read that. 
+This is a file meant to store all of the functions used in the grading script. The original version of the grading script had just spaghetti code and friends of mine had no desire to read that. This should hopefully make things look a lot cleaner. 
 
 ## Scatter Plot Visualizations Script.ipynb
-This was just me having some fun trying to find visual correlations between various features and the grade outcome. There are a lot more visualizations, some that I made during the quarter and many others. I'll upload them when they are more organized and don't just look like a hodge-podge of visualizations. 
+This was just me having some fun trying to find visual correlations between various features and student grades. There are a lot more visualizations, some that I made during the quarter and many others that look cool but aren't at all organized. I'll upload them when I have a set I'm happy with and they don't just look like a hodge-podge of visualizations. 

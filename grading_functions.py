@@ -13,7 +13,7 @@ def letter_grade_assigner(row):
     """
     This letter grade assigner takes a raw grade percentage and outputs a letter grade. There are two peculiarities to this function that are not in a standard letter grade assigner: 
     1) This course has a tradition of grading with a "Great Effort Rule" that assigns a B to students who earn a C or better through raw score if they took most of the quizzes, came to lecture and completed at least most of the homework. I took a quick look at the spreadsheet and did not find any students who fell into this category without having reasonably high homework and quiz scores, so I just applied this to everyone. 
-    2) This was a tough quarter, and some students struggled all quarter with low grades and ended up doing a stellar job on the final. I believe that these students earned the grade they got on the final (especially because this was not a take-home exam, offering them the chance to get "helped" through the whole thing). So the students who received a higher percentage on the final than they did in the class were graded according to their final score. The great effort rule was not applied here, and I hope the reasoning for this is clear. 
+    2) This was a tough quarter, and some students struggled all quarter with low grades and ended up doing a stellar job on the final. I believe that these students earned the grade they got on the final (especially because this was not a take-home exam, which would offer them the chance to get "helped" by someone else). So the students who received a higher percentage on the final than they did in the class were graded according to their final score. The great effort rule was not applied in this case, nor should it be. 
     Functionality: The variable num is used as a default for a letter grade assignment. You will see this not used in the case of being assigned B grades because the Great Effort Rule is based on their raw score. For the lines below, num could have been used instead of row["Final"] without change, but I think this could have easily muddied what was happening so I kept the "Final" argument. 
     """
     num = max(row["Grade"], row["Final"])
@@ -50,6 +50,12 @@ def letter_grade_assigner(row):
 
 
 def missed_exam_replacer(row, list, exam_name, replacement_column_name):
+    """
+    This is a blanket function to be used in the df.apply() method, with row being the default entry in the df.apply() method. 
+    list is a list of student ids for students who have excused absences for the column in question. 
+    exam_name is the column name of your dataframe (because you want to return that value for everyone who didn't have an excused absence)
+    replacement_column_name is the column name with the replacement grade value. 
+    """
     if row["SID"] in list:
         return row[replacement_column_name]
     else:
@@ -58,7 +64,7 @@ def missed_exam_replacer(row, list, exam_name, replacement_column_name):
 
 def quiz_average_calculator(row, quiz_max_points, i):
     """
-    The computes the total quiz score divided by the adjusted maximum points (see the tuple function's description, whose outputs are used for this function's computation). 
+    The computes the total quiz score divided by the adjusted maximum points (see the description for quiz_tuple_function's, whose outputs are used as inputs for this function's computation). 
     """
     points_earned = sum([row["Quiz "+str(i)+"-"][0] for i in range (1,len(quiz_max_points)+1)])
     total_points = sum(quiz_max_points)-sum([row["Quiz "+str(i)+"-"][1] for i in range(1,len(quiz_max_points)+1)])
@@ -92,8 +98,7 @@ def version_merger(row, version_list):   # row is a Series
     This takes in a dataframe row and returns the entry from the version list with the first value, or nan if none of the entries have values. The inputs are "row" to be used by the dataframe operation (with a lambda function and the .apply method) and the version list is meant to tell the .apply method which column titles to look for. 
     """
     for item in version_list:
-        if not 
-        .isnan(row[item]):
+        if not np.isnan(row[item]):
             return row[item]
     return np.nan
  

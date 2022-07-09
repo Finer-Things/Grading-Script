@@ -13,3 +13,6 @@ This is a file meant to store all of the functions used in the grading script. T
 
 ## Scatter Plot Visualizations Script.ipynb
 This was just me having some fun trying to find visual correlations between various features and student grades. There are a lot more visualizations, some that I made during the quarter and many others that look cool but aren't at all organized. I'll upload them when I have a set I'm happy with and they don't just look like a hodge-podge of visualizations. 
+
+## Pie Chart of Grade Weights for the Syllabus
+I had this idea as I was reading about pie charts and how to make them. Many of my students did not realize that before a midterm and the final were taken, more than half their grade had still yet to be determined. I thought that making a pie chart might help with this. This chart's counterpart is already on the syllabus for my next course right next to the grading breakdown. :)
